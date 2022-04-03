@@ -1,0 +1,9 @@
+.VendorInfo {
+  width: 80%;
+  height: 25px;
+  margin-bottom: 2px;
+}
+
+.getAssetById {
+  display: flex;
+}
