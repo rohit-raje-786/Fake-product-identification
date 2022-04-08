@@ -156,6 +156,9 @@ const ReactTable = React.memo((props) => {
       console.log("Please Enter Asset Id");
       return;
     }
+    let distributors = await props.contract.getAlldistributors();
+    distributors = distributors.filter((d, i) => i == assetId);
+    console.log(distributors);
     let asset = await props.contract.getAssetByUUID(assetId);
     let assetcostandquantity = await props.contract.getItemByUUID(assetId);
     console.log(asset);
