@@ -309,8 +309,7 @@ const ReactTable = React.memo((props) => {
                           "content-type": "application/json",
                           "X-RapidAPI-Host":
                             "rapidprod-sendgrid-v1.p.rapidapi.com",
-                          "X-RapidAPI-Key":
-                            "977a9bf7fbmsh05532c371cb89d4p1fb5bbjsn0f8e4f90062a",
+                          "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
                         },
                         data: `{"personalizations":[{"to":[{"email":"${distributor[2]}"}],"subject":"Dispatch Item"}],"from":{"email":"rp589006@gmail.com"},"content":[{"type":"text/plain","value":"${body}"}]}`,
                       };
