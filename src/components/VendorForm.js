@@ -6,6 +6,7 @@ import { useTable } from "react-table";
 import QRCode from "qrcode.react";
 import Modal from "react-modal";
 import "./VendorForm.css";
+import axios from "axios";
 
 const TableInput = (props) => {
   console.log("TableInput", props);
@@ -156,6 +157,7 @@ const ReactTable = React.memo((props) => {
       console.log("Please Enter Asset Id");
       return;
     }
+
     let distributors = await props.contract.getAlldistributors();
     distributors = distributors.filter((d, i) => i == assetId);
     console.log(distributors);
@@ -260,13 +262,14 @@ const ReactTable = React.memo((props) => {
                   props.vendorName,
                   props.consumerName,
                   props.vendorAdd,
-                  props.consumerAdd
+                  props.consumerAdd,
+                  props.distributorId
                 );
 
                 let asset = await props.contract.createAsset(
                   data[0].item,
                   data[0].description,
-                  "2",
+                  props.distributorId,
                   data[0].cost,
                   data[0].quantity,
                   props.vendorName,
@@ -281,7 +284,7 @@ const ReactTable = React.memo((props) => {
                   const info = {
                     name: data[0].item,
                     description: data[0].description,
-                    id: "1",
+                    id: props.distributorId,
                     cost: data[0].cost,
                     quantity: data[0].quantity,
                     vendorName: props.vendorName,
@@ -291,7 +294,44 @@ const ReactTable = React.memo((props) => {
                   };
                   let strData = JSON.stringify(info);
                   setQrcode(strData);
-                  setIsOpen(true);
+                  try {
+                    let distributor = await props.contract.getDistributorbyId(
+                      props.distributorId
+                    );
+                    console.log(distributor[2]);
+
+                    if (distributor[2]) {
+                      let body = `Deliver to the given Address:${props.consumerAdd}`;
+                      const options = {
+                        method: "POST",
+                        url: "https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send",
+                        headers: {
+                          "content-type": "application/json",
+                          "X-RapidAPI-Host":
+                            "rapidprod-sendgrid-v1.p.rapidapi.com",
+                          "X-RapidAPI-Key":
+                            "977a9bf7fbmsh05532c371cb89d4p1fb5bbjsn0f8e4f90062a",
+                        },
+                        data: `{"personalizations":[{"to":[{"email":"${distributor[2]}"}],"subject":"Dispatch Item"}],"from":{"email":"rp589006@gmail.com"},"content":[{"type":"text/plain","value":"${body}"}]}`,
+                      };
+
+                      axios
+                        .request(options)
+                        .then(function (response) {
+                          console.log("Email Succesfully Send");
+                        })
+                        .catch(function (error) {
+                          console.error("Unable to send the mail");
+                        });
+
+                      setIsOpen(true);
+                    } else {
+                      console.log("distributor does not exixts");
+                      return;
+                    }
+                  } catch (e) {
+                    console.log(e);
+                  }
                 } else {
                   console.log("unable to create asset");
                 }
@@ -394,6 +434,7 @@ const ReactForm = (props) => {
   const [vendorAdd, setVendorAdd] = React.useState("");
   const [consumerAdd, setConsumerAdd] = React.useState("");
   const [consumerName, setConsumerName] = React.useState("");
+  const [distributorId, setDistributorId] = React.useState("");
   return (
     <FormStyles>
       <Form>
@@ -452,6 +493,17 @@ const ReactForm = (props) => {
                 values.dashAddress + values.dashAddressto
               }?amount=${amountDue}?address=${account}`}
             /> */}
+            <label>
+              Distribuotr Id:
+              <input
+                type="text"
+                style={{ marginLeft: 20, height: 30 }}
+                onChange={(e) => {
+                  e.preventDefault();
+                  setDistributorId(e.target.value);
+                }}
+              />
+            </label>
           </section>
         </aside>
         <ReactTable
@@ -461,6 +513,7 @@ const ReactForm = (props) => {
           consumerName={consumerName}
           vendorAdd={vendorAdd}
           consumerAdd={consumerAdd}
+          distributorId={distributorId}
         />
         <br />
         <aside>
