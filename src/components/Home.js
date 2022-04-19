@@ -1,15 +1,55 @@
 import React from "react";
+import "../css/home.css";
+import Title from "./Title";
 
-const Home = () => {
+const Home = ({ contract }) => {
   return (
-    <>
-      <h1>Welcome to the blockchain based asset Tracker</h1>
+    <div className="container">
+      <h1
+        style={{
+          textAlign: "center",
+          position: "relative",
+          top: 30,
+          color: "#551a8a",
+        }}
+      >
+        Welcome To Blockchain Based Asset Tracker
+      </h1>
+      <div className="bg">
+        <section className="panel">
+          <h2 style={{ color: "#fff" }}>Enroll as Vendor</h2>
+          <br />
+          <div className="card__text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              tenetur vel accusamus. Cumque, iste asperiores. Perferendis odio
+              magnam nisi, eos provident nobis maxime nostrum nam, ipsum
+              blanditiis quasi saepe aliquid!
+            </p>
+          </div>
 
-      <a href="/connectwallet/1">Vendor</a>
-      <br />
-      <br />
-      <a href="/connectwallet/2">Distributor</a>
-    </>
+          <a href="/vendor" className="button">
+            Enroll
+          </a>
+        </section>
+        <section className="panel">
+          <h2 style={{ color: "#fff" }}>Enroll as Distributor</h2>
+          <br />
+          <div className="card__text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              tenetur vel accusamus. Cumque, iste asperiores. Perferendis odio
+              magnam nisi, eos provident nobis maxime nostrum nam, ipsum
+              blanditiis quasi saepe aliquid!
+            </p>
+          </div>
+
+          <a href="/distributorform" className="button">
+            Enroll
+          </a>
+        </section>
+      </div>
+    </div>
   );
 };
 
