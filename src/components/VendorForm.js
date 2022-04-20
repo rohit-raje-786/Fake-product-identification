@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { useForm, useField, splitFormProps } from "react-form";
@@ -248,6 +248,7 @@ const ReactTable = React.memo((props) => {
             <button
               type="submit"
               onClick={async (e) => {
+                console.log("id", props.distributorId);
                 if (
                   !data[0].item ||
                   !data[0].description ||
@@ -393,7 +394,7 @@ const PaymentQRCode = styled(QRCode)`
 const ReactForm = (props) => {
   console.log("ReactForm", props);
   const navigate = useNavigate();
-  const { amountDue, setAmountDue, account } = props;
+  const { amountDue, setAmountDue, distributors } = props;
   const defaultValues = React.useMemo(
     () => ({
       name: "Rohit",
@@ -409,16 +410,12 @@ const ReactForm = (props) => {
   };
   const form = useForm({ defaultValues, onSubmit });
   const { Form, values, meta } = form;
-  const { isSubmitting, canSubmit } = meta;
-  const required = React.useCallback(
-    (value) => (!value ? "Required!" : false),
-    []
-  );
+
   const [vendorName, setVendorName] = React.useState("");
   const [vendorAdd, setVendorAdd] = React.useState("");
   const [consumerAdd, setConsumerAdd] = React.useState("");
   const [consumerName, setConsumerName] = React.useState("");
-  const [distributorId, setDistributorId] = React.useState("");
+  const [distributorId, setDistributorId] = React.useState(0);
   return (
     <>
       <FontAwesomeIcon
@@ -478,15 +475,20 @@ const ReactForm = (props) => {
                   />
                 </label>
                 <label className="label">
-                  Distribuotr Id:
-                  <input
-                    type="text"
+                  Distributors:
+                  <select
                     className="VendorInfo"
+                    value={distributorId}
                     onChange={(e) => {
-                      e.preventDefault();
                       setDistributorId(e.target.value);
                     }}
-                  />
+                  >
+                    {distributors.map((d, i) => (
+                      <option key={i} value={i}>
+                        {d.name}
+                      </option>
+                    ))}
+                  </select>
                 </label>
               </div>
             </section>
@@ -531,16 +533,29 @@ const Invoice = (props) => {
         setAmountDue={setAmountDue}
         account={props.account}
         contract={props.contract}
+        distributors={props.distributors}
       />
     </Main>
   );
 };
 
-const App = (props) =>
-  console.log("contract", props.contract) || (
+const App = (props) => {
+  const [distributors, setDistributors] = useState([]);
+  const getDistributors = async () => {
+    let dis = await props.contract.getAlldistributors();
+    setDistributors(dis);
+  };
+  useEffect(() => {
+    getDistributors();
+  }, []);
+  return (
     <div>
-      <Invoice account={props.account} contract={props.contract} />
+      <Invoice
+        account={props.account}
+        contract={props.contract}
+        distributors={distributors}
+      />
     </div>
   );
-
+};
 export default App;

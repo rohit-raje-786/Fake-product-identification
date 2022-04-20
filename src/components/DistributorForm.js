@@ -58,6 +58,7 @@ const DistributorForm = (props) => {
         setMessage("Register");
         setIsOpen(true);
       } catch (e) {
+        setMessage("Distributor Already Exits");
         console.log(e);
       }
     }
@@ -102,7 +103,7 @@ const DistributorForm = (props) => {
       </div>
 
       <div>
-        <form class="form">
+        <form className="form">
           <h2>Register Here</h2>
           <br />
           <label className="lable">Name</label>
