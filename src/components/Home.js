@@ -48,6 +48,22 @@ const Home = ({ contract }) => {
             Enroll
           </a>
         </section>
+        <section className="panel">
+          <h2 style={{ color: "#fff" }}>Authenticate Product</h2>
+          <br />
+          <div className="card__text">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+              tenetur vel accusamus. Cumque, iste asperiores. Perferendis odio
+              magnam nisi, eos provident nobis maxime nostrum nam, ipsum
+              blanditiis quasi saepe aliquid!
+            </p>
+          </div>
+
+          <a href="/authenticate" className="button">
+            Authenticate
+          </a>
+        </section>
       </div>
     </div>
   );

@@ -17,6 +17,7 @@ import Distributors from "./components/Distributors";
 import SideBar from "./components/SideBar";
 import Modal from "react-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Authenticate from "./components/Authenticate";
 
 const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADD;
 
@@ -144,6 +145,10 @@ const App = () => {
             <Route
               path="/vendor/available-distributors"
               element={<Distributors contract={contract} />}
+            />
+            <Route
+              path="/authenticate"
+              element={<Authenticate contract={contract} />}
             />
           </Routes>
         </BrowserRouter>
