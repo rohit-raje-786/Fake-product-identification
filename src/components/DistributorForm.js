@@ -1,8 +1,25 @@
 import React, { useState } from "react";
-
-import "./Distributor.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
+import "../css/distributorform.css";
+import Title from "./Title";
+import Modal from "react-modal";
 
 const DistributorForm = (props) => {
+  const customStyle = {
+    content: {
+      top: "40%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      width: "600px",
+      height: "250px",
+      borderRadius: "20px",
+    },
+  };
+  const navigate = useNavigate();
   const contract = props.contract;
   const [state, setState] = useState({
     name: "",
@@ -10,6 +27,12 @@ const DistributorForm = (props) => {
     email: "",
     phone: "",
   });
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [message, setMessage] = useState("Register");
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   const handler = (e) => {
     e.preventDefault();
     const val = e.target.value;
@@ -19,83 +42,119 @@ const DistributorForm = (props) => {
 
   const Submit = async (e) => {
     e.preventDefault();
-    try {
-      let createDistributor = await contract.insertDistributor(
-        state.name,
-        state.address,
-        state.email,
-        state.phone
-      );
-      await createDistributor.wait();
-      console.log(createDistributor.hash);
-    } catch (e) {
-      console.log(e);
+    if (!state.name || !state.address || !state.email || !state.phone) {
+      setMessage("Please fill all the fields");
+    } else {
+      setMessage("Registering...");
+      try {
+        let createDistributor = await contract.insertDistributor(
+          state.name,
+          state.address,
+          state.email,
+          state.phone
+        );
+        await createDistributor.wait();
+        console.log(createDistributor.hash);
+        setMessage("Register");
+        setIsOpen(true);
+      } catch (e) {
+        setMessage("Distributor Already Exits");
+        console.log(e);
+      }
     }
   };
 
-  const GetDistributors = async (e) => {
-    e.preventDefault();
-    try {
-      let getDistributors = await contract.getAlldistributors();
-      getDistributors.forEach((d, i) => {
-        console.log(i + "->");
-        console.log(d.name);
-        console.log(d.email);
-        console.log(d.add);
-        console.log(d.phone);
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  };
   return (
-    <>
+    <div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        ariaHideApp={false}
+        style={customStyle}
+      >
+        <div style={{ textAlign: "center", marginTop: 40 }}>
+          <h2>Your have successfully Registerated.. 🚀</h2>
+          <p>You will get a mail if vendor assigns you a dispatch order</p>
+          <br />
+          <a href="/">Proceed to the Home Page</a>
+        </div>
+
+        <span
+          onClick={closeModal}
+          style={{
+            position: "absolute",
+            top: 3,
+            right: 20,
+            fontSize: 28,
+            cursor: "pointer",
+          }}
+        >
+          <FontAwesomeIcon icon="fa-solid fa-xmark" />
+        </span>
+      </Modal>
+      <div style={{ display: "flex", justifyContent: "between" }}>
+        <FontAwesomeIcon
+          icon="fa-solid fa-arrow-left"
+          className="menu-icon"
+          style={{ cursor: "pointer", marginTop: 20 }}
+          onClick={() => navigate(-1)}
+        />
+        <br />
+      </div>
+
       <div>
-        <form>
-          <label>Name</label>
+        <form className="form">
+          <h2>Register Here</h2>
+          <br />
+          <label className="lable">Name</label>
+
           <input
             type="text"
-            id="fname"
+            placeholder="Name"
             name="name"
-            placeholder="Your name.."
             onChange={handler}
+            className="input"
+            required
           />
-
-          <label>Address</label>
+          <br />
+          <label className="lable">Address</label>
           <input
             type="text"
-            id="lname"
+            placeholder="Address"
             name="address"
-            placeholder="Your add.."
             onChange={handler}
+            className="input"
+            required
           />
+          <br />
 
-          <label>Email</label>
+          <label className="lable">Email</label>
           <input
             type="text"
-            id="lname"
+            placeholder="Email"
             name="email"
-            placeholder="Your email.."
             onChange={handler}
+            className="input"
+            required
           />
-
-          <label>Phone</label>
+          <br />
+          <label className="lable">Phone</label>
           <input
             type="text"
-            id="lname"
+            placeholder="Phone"
             name="phone"
-            placeholder="Your Phone.."
             onChange={handler}
+            className="input"
+            required
           />
-          <button className="submit" onClick={Submit}>
-            Create Distributor
-          </button>
-          <button className="submit" onClick={GetDistributors}>
-            Get Distributors
+          <br />
+
+          <button className="button" onClick={Submit}>
+            {message}
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
