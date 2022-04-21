@@ -73,6 +73,10 @@ const Home = ({ account }) => {
       </div>} */}
 
       <div id="login-type-container">
+        <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
+          Wallet Address:{account}
+        </h4>
+        <br />
         <div id="login-type">
           <h1 id="greetings">Welcome to Asset Tracker!</h1>
           <h1 id="subtitle-txt">

@@ -419,12 +419,12 @@ const ReactForm = (props) => {
   const [distributorId, setDistributorId] = React.useState(0);
   return (
     <>
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         icon="fa-solid fa-arrow-left"
         className="menu-icon"
         style={{ cursor: "pointer", marginTop: 20 }}
         onClick={() => navigate(-1)}
-      />
+      /> */}
 
       <FormStyles style={{ marginTop: "40px" }}>
         <Form>

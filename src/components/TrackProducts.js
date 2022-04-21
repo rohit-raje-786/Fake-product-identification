@@ -21,7 +21,7 @@ function TrackProducts({ contract, account }) {
   }, []);
   return (
     <div>
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         icon="fa-solid fa-arrow-left"
         className="menu-icon"
         style={{ cursor: "pointer", marginTop: 20 }}
@@ -31,7 +31,7 @@ function TrackProducts({ contract, account }) {
         Wallet Address:{account}
       </h4>
       <br />
-      <Title title="Track Products" />
+      <Title title="Track Products" /> */}
       <br />
       <table className="styled-table">
         <thead>

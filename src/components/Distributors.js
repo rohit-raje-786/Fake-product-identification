@@ -25,7 +25,7 @@ function Distributors({ contract, account }) {
 
   return (
     <div>
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         icon="fa-solid fa-arrow-left"
         className="menu-icon"
         style={{ cursor: "pointer", marginTop: 20 }}
@@ -35,7 +35,7 @@ function Distributors({ contract, account }) {
         Wallet Address:{account}
       </h4>
       <br />
-      <Title title="List Of Available Distributors" />
+      <Title title="List Of Available Distributors" /> */}
       <br />
       {distributors && (
         <table className="styled-table">

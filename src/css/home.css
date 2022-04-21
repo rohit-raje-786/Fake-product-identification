@@ -86,11 +86,11 @@ h2 {
 }
 
 #greetings {
-  font-size: 4rem;
+  font-size: 6.5rem;
   margin-bottom: 0.5rem;
 }
 #subtitle-txt {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 5rem;
 }
 
@@ -130,7 +130,7 @@ h2 {
   margin-top: 24px;
   color: var(--primaryColor);
   font-family: "Inter", sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
 }
 

@@ -17,6 +17,7 @@ import Distributors from "./components/Distributors";
 import SideBar from "./components/SideBar";
 
 import Authenticate from "./components/Authenticate";
+import GetStarted from "./components/getStarted";
 
 const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADD;
 
@@ -102,17 +103,42 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home account={currentAccount} />}></Route>
-            <Route
+            {/* <Route
               path="/vendor"
               element={<SideBar contract={contract} account={currentAccount} />}
-            ></Route>
+            ></Route> */}
+            <Route
+              path="/vendor"
+              element={
+                <GetStarted contract={contract} account={currentAccount} />
+              }
+            >
+              <Route
+                path="products"
+                element={
+                  <Products contract={contract} account={currentAccount} />
+                }
+              ></Route>
+              <Route
+                path="addproduct"
+                element={
+                  <VendorForm contract={contract} account={currentAccount} />
+                }
+              />
+              <Route
+                path="available-distributors"
+                element={
+                  <Distributors contract={contract} account={currentAccount} />
+                }
+              />
+            </Route>
             <Route
               path="/distributorform"
               element={
                 <DistributorForm contract={contract} account={currentAccount} />
               }
             ></Route>
-            <Route
+            {/* <Route
               path="/vendor/products"
               element={
                 <Products contract={contract} account={currentAccount} />
@@ -129,7 +155,7 @@ const App = () => {
               element={
                 <Distributors contract={contract} account={currentAccount} />
               }
-            />
+            /> */}
             <Route
               path="/authenticate"
               element={
