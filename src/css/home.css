@@ -75,16 +75,23 @@ h2 {
 }
 
 #login-type {
-  width: 60%;
-  min-width: 600px;
+  width: 80%;
+  min-width:800px;
+  max-width: 1200px;
+  /* min-width: 600px; */
+  color: var(--lightPrimaryColor);
+  font-family: "Courgette", cursive;
+  text-align: center;
+
 }
 
 #greetings {
-  color: var(--lightPrimaryColor);
-  font-family: "Courgette", cursive;
   font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+#subtitle-txt {
+  font-size: 2rem;
   margin-bottom: 5rem;
-  text-align: center;
 }
 
 #options-container {
@@ -92,7 +99,7 @@ h2 {
   justify-content: space-around;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   #login-type-container {
     height: auto;
     width: 100%;
@@ -113,8 +120,8 @@ h2 {
 }
 
 .options-image {
-  max-width: 240px;
-  max-height: 240px;
+  width: 240px;
+  height: 240px;
   display: block;
   margin: 0px auto;
 }
@@ -129,4 +136,13 @@ h2 {
 
 .select-link{
   text-decoration: none;
+}
+
+@media (min-width:800px) and (max-width: 1000px) {
+  .options-image {
+    width: 160px;
+    height: 160px;
+    display: block;
+    margin: 0px auto;
+  }
 }

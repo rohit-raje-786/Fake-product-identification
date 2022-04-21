@@ -4,7 +4,7 @@ import Title from "./Title";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Distributors({ contract }) {
+function Distributors({ contract, account }) {
   const navigate = useNavigate();
   const [distributors, setDistributors] = useState([]);
 
@@ -31,6 +31,10 @@ function Distributors({ contract }) {
         style={{ cursor: "pointer", marginTop: 20 }}
         onClick={() => navigate(-1)}
       />
+      <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
+        Wallet Address:{account}
+      </h4>
+      <br />
       <Title title="List Of Available Distributors" />
       <br />
       {distributors && (

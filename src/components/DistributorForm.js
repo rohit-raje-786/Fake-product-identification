@@ -5,7 +5,7 @@ import "../css/distributorform.css";
 import Title from "./Title";
 import Modal from "react-modal";
 
-const DistributorForm = (props) => {
+const DistributorForm = ({ contract, account }) => {
   const customStyle = {
     content: {
       top: "40%",
@@ -20,7 +20,7 @@ const DistributorForm = (props) => {
     },
   };
   const navigate = useNavigate();
-  const contract = props.contract;
+
   const [state, setState] = useState({
     name: "",
     address: "",
@@ -99,6 +99,10 @@ const DistributorForm = (props) => {
           style={{ cursor: "pointer", marginTop: 20 }}
           onClick={() => navigate(-1)}
         />
+        <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
+          Wallet Address:{account}
+        </h4>
+        <br />
         <br />
       </div>
 

@@ -168,7 +168,7 @@ const ReactTable = React.memo((props) => {
         ariaHideApp={false}
       >
         <div style={{ textAlign: "center", marginTop: 10 }}>
-          <PaymentQRCode size={500} value={`${qrcode}&hash=${hash}`} />
+          <PaymentQRCode size={500} value={`${qrcode}`} />
         </div>
 
         <span
@@ -300,6 +300,7 @@ const ReactTable = React.memo((props) => {
                       consumerName: props.consumerName,
                       vendorAdd: props.vendorAdd,
                       consumerAdd: props.consumerAdd,
+                      hash: asset.hash,
                     };
                     let strData = JSON.stringify(info);
                     setQrcode(strData);
@@ -431,7 +432,7 @@ const ReactForm = (props) => {
             <section>
               <div className="info-container">
                 <label className="label">
-                  Vendor :{" "}
+                  Manufacturer :{" "}
                   <input
                     type="text"
                     className="VendorInfo"
@@ -527,6 +528,10 @@ const Invoice = (props) => {
 
   return (
     <Main>
+      <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
+        Wallet Address:{props.account}
+      </h4>
+      <br />
       <h2>Invoice</h2>
       <ReactForm
         amountDue={amountDue}

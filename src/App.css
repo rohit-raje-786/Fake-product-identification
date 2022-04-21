@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&family=Shadows+Into+Light&display=swap");
 
+:root {
+  --primaryColor: #42427d;
+  --lightPrimaryColor: #5840bb;
+  --secondaryColor:#7979B2;
+  --light-bg: #e5eff7;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,7 +14,7 @@
   font-family: "IBM Plex Serif", serif !important;
 }
 body {
-  background-image: url(https://source.unsplash.com/n7a2OJDSZns/2200x1100);
+  background-image: url("../public/assets/images/light-theme.png");
   background-position: center;
   background-size: cover;
 }
