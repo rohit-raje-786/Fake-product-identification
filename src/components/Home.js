@@ -2,9 +2,13 @@ import React from "react";
 import "../css/home.css";
 import Title from "./Title";
 
-const Home = ({ contract }) => {
+const Home = ({ account }) => {
   return (
     <div className="container">
+      <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
+        Wallet Address:{account}
+      </h4>
+      <br />
       <h1
         style={{
           textAlign: "center",
@@ -13,8 +17,9 @@ const Home = ({ contract }) => {
           color: "#551a8a",
         }}
       >
-        Welcome To Blockchain Based Asset Tracker
+        Welcome To Blockchain Based Fake Product Detection 🕵️‍♀️
       </h1>
+
       <div className="bg">
         <section className="panel">
           <h2 style={{ color: "#fff" }}>Enroll as Vendor</h2>

@@ -3,12 +3,16 @@ import { QrReader } from "react-qr-reader";
 import axios from "axios";
 
 import "../css/Authenticate.css";
-const Authenticate = () => {
+const Authenticate = ({ account }) => {
   const [auth, setAuth] = useState(false);
   const [message, setMessage] = useState("");
   return (
     <>
       <div className="cam">
+        <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
+          Wallet Address:{account}
+        </h4>
+        <br />
         <h2 style={{ position: "absolute", top: 20 }}>
           Hold QR Code Steady and Clear to Scan
         </h2>

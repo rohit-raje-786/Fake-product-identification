@@ -3,7 +3,7 @@ import Title from "./Title";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
-function TrackProducts({ contract }) {
+function TrackProducts({ contract, account }) {
   const navigate = useNavigate();
   const [assets, setAssets] = useState([]);
 
@@ -27,6 +27,10 @@ function TrackProducts({ contract }) {
         style={{ cursor: "pointer", marginTop: 20 }}
         onClick={() => navigate(-1)}
       />
+      <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
+        Wallet Address:{account}
+      </h4>
+      <br />
       <Title title="Track Products" />
       <br />
       <table className="styled-table">

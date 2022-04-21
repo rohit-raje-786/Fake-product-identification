@@ -528,6 +528,10 @@ const Invoice = (props) => {
 
   return (
     <Main>
+      <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
+        Wallet Address:{props.account}
+      </h4>
+      <br />
       <h2>Invoice</h2>
       <ReactForm
         amountDue={amountDue}
