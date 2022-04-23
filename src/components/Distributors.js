@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/distributors.css";
 import Title from "./Title";
+import MainBar from "./MainBar";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -24,20 +25,8 @@ function Distributors({ contract, account }) {
   }, []);
 
   return (
-    <div>
-      {/* <FontAwesomeIcon
-        icon="fa-solid fa-arrow-left"
-        className="menu-icon"
-        style={{ cursor: "pointer", marginTop: 20 }}
-        onClick={() => navigate(-1)}
-      />
-      <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
-        Wallet Address:{account}
-      </h4>
-      <br />
-      <Title title="List Of Available Distributors" /> */}
-      <br />
-      {distributors && (
+    distributors && (
+      <MainBar pageTitle="Welcome to manufacturer dashboard">
         <table className="styled-table">
           <thead>
             <tr>
@@ -60,8 +49,8 @@ function Distributors({ contract, account }) {
             ))}
           </tbody>
         </table>
-      )}
-    </div>
+      </MainBar>
+    )
   );
 }
 

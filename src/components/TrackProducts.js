@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Title from "./Title";
+import MainBar from "./MainBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
@@ -20,7 +21,7 @@ function TrackProducts({ contract, account }) {
     getAssets();
   }, []);
   return (
-    <div>
+    <MainBar pageTitle="Track Products">
       {/* <FontAwesomeIcon
         icon="fa-solid fa-arrow-left"
         className="menu-icon"
@@ -67,7 +68,7 @@ function TrackProducts({ contract, account }) {
           ))}
         </tbody>
       </table>
-    </div>
+    </MainBar>
   );
 }
 
