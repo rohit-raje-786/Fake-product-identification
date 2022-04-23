@@ -108,7 +108,7 @@ const DistributorForm = ({ contract, account }) => {
 
       <div>
         <form className="form">
-          <h2>Register Here</h2>
+          <h2 className="form-title">Register Here</h2>
           <br />
           <label className="lable">Name</label>
 

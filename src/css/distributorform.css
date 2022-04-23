@@ -4,13 +4,14 @@ body {
 }
 
 .form {
-  height: 700px;
-  width: 400px;
-  background-image: linear-gradient(
+  height: auto;
+  width: 600px;
+  /* background-image: linear-gradient(
     to bottom right,
     rgba(255, 255, 255, 0.3) 0%,
     rgba(255, 255, 255, 0.1) 100%
-  );
+  ); */
+  background-color: #F7FAFF;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -22,7 +23,7 @@ body {
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: rgba(255, 255, 255, 0.5) -20px -20px 45px inset,
     rgba(0, 0, 0, 0.1) 10px 10px 20px, rgba(0, 0, 0, 0.06) 5px 5px 10px;
-  padding: 50px 35px;
+  padding: 35px;
   font-size: large;
   font-weight: 900;
 }
@@ -40,17 +41,27 @@ body {
   text-align: center;
 }
 
-.label {
+.form-title{
+  color: var(--primaryColor);
+}
+
+.lable {
   display: block;
-  margin-top: 30px;
-  font-size: 16px;
+  /* margin-top: 1rem; */
+  /* font-size: 16px; */
   font-weight: 500;
+  font-size: 2.5rem;
+  margin: 1rem 0px;
+  color: #42427d;
+  opacity: 0.9;
+  /* color: brown; */
 }
 .input {
   display: block;
   height: 50px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
+   border: 0.75px solid #000000;
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 9px;
@@ -59,8 +70,8 @@ body {
 }
 
 .button {
-  margin-top: 50px;
-  width: 100%;
+  display: block;
+  width: 50%;
   background-image: linear-gradient(
     -45deg,
     rgba(9, 28, 60, 1) 0%,
@@ -75,4 +86,7 @@ body {
   letter-spacing: 0.2em;
   border-radius: 5px;
   cursor: pointer;
+  margin: 0px auto;
+  margin-top: 3rem;
+
 }
