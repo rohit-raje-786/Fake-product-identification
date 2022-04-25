@@ -24,6 +24,7 @@ const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADD;
 library.add(fas);
 
 const App = () => {
+  console.log(process.env.REACT_APP_WALLET_ADD);
   const [currentAccount, setCurrentAccount] = useState("");
   const [wallet, setWallet] = useState("Please Connect Your Wallet to Proceed");
   const [contract, setContract] = useState(null);

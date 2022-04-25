@@ -24,15 +24,15 @@ const Greetings = () => {
   );
 };
 
-const GetStarted = ({ contract, currentAccount }) => {
+const GetStarted = ({ contract, account }) => {
+  console.log("get started", account);
   const [show, setShow] = useState(false);
   const { pathname } = useLocation();
 
-  console.log(currentAccount);
-  console.log(currentAccount, process.env.REACT_APP_WALLET_ADD);
+  console.log(account);
 
   const checkAccount = () => {
-    setShow(currentAccount === process.env.REACT_APP_WALLET_ADD);
+    setShow(account === process.env.REACT_APP_WALLET_ADD);
   };
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const GetStarted = ({ contract, currentAccount }) => {
       <SideBar
         activeLink={currentPageURL}
         contract={contract}
-        account={currentAccount}
+        account={account}
       />
       {isLinkPage && <Greetings />}
       <Outlet />

@@ -22,17 +22,6 @@ function TrackProducts({ contract, account }) {
   }, []);
   return (
     <MainBar pageTitle="Track Products">
-      {/* <FontAwesomeIcon
-        icon="fa-solid fa-arrow-left"
-        className="menu-icon"
-        style={{ cursor: "pointer", marginTop: 20 }}
-        onClick={() => navigate(-1)}
-      />
-      <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
-        Wallet Address:{account}
-      </h4>
-      <br />
-      <Title title="Track Products" /> */}
       <br />
       <table className="styled-table">
         <thead>

@@ -10,7 +10,10 @@ const Authenticate = ({ account }) => {
     <>
       <div className="cam">
         <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
-          Wallet Address:{account}
+          Wallet Address:{" "}
+          {account.substring(0, 4) +
+            "..." +
+            account.substring(account.length - 4, account.length)}
         </h4>
         <br />
         <h2 style={{ position: "absolute", top: 20 }}>

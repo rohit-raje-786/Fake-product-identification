@@ -32,7 +32,7 @@ function Distributors({ contract, account }) {
             <tr>
               <th>id</th>
               <th>Name</th>
-              <th>Age</th>
+              <th>Address</th>
               <th>Email</th>
               <th>Phone</th>
             </tr>

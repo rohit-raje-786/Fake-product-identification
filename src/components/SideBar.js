@@ -33,7 +33,12 @@ const SideBar = ({ contract, account, activeLink }) => {
             style={{ cursor: "pointer", marginTop: 20 }}
             onClick={() => navigate(-1)}
           />
-          <h4 className="wallet-addr-txt">Wallet Address:{account}</h4>
+          <h4 className="wallet-addr-txt">
+            Wallet Address:
+            {account.substring(0, 4) +
+              "..." +
+              account.substring(account.length - 4, account.length)}
+          </h4>
         </div>
 
         <div id="menu-item-container">
