@@ -100,7 +100,10 @@ const DistributorForm = ({ contract, account }) => {
           onClick={() => navigate(-1)}
         />
         <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
-          Wallet Address:{account}
+          Wallet Address:
+          {account.substring(0, 4) +
+            "..." +
+            account.substring(account.length - 4, account.length)}
         </h4>
         <br />
         <br />
@@ -108,7 +111,7 @@ const DistributorForm = ({ contract, account }) => {
 
       <div>
         <form className="form">
-          <h2>Register Here</h2>
+          <h2 className="form-title">Register Here</h2>
           <br />
           <label className="lable">Name</label>
 

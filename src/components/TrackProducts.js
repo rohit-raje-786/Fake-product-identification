@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Title from "./Title";
+import MainBar from "./MainBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
@@ -20,18 +21,7 @@ function TrackProducts({ contract, account }) {
     getAssets();
   }, []);
   return (
-    <div>
-      <FontAwesomeIcon
-        icon="fa-solid fa-arrow-left"
-        className="menu-icon"
-        style={{ cursor: "pointer", marginTop: 20 }}
-        onClick={() => navigate(-1)}
-      />
-      <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
-        Wallet Address:{account}
-      </h4>
-      <br />
-      <Title title="Track Products" />
+    <MainBar pageTitle="Track Products">
       <br />
       <table className="styled-table">
         <thead>
@@ -67,7 +57,7 @@ function TrackProducts({ contract, account }) {
           ))}
         </tbody>
       </table>
-    </div>
+    </MainBar>
   );
 }
 

@@ -10,6 +10,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Title from "./Title";
+import MainBar from "./MainBar";
 
 const TableInput = (props) => {
   console.log("TableInput", props);
@@ -419,12 +420,12 @@ const ReactForm = (props) => {
   const [distributorId, setDistributorId] = React.useState(0);
   return (
     <>
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         icon="fa-solid fa-arrow-left"
         className="menu-icon"
         style={{ cursor: "pointer", marginTop: 20 }}
         onClick={() => navigate(-1)}
-      />
+      /> */}
 
       <FormStyles style={{ marginTop: "40px" }}>
         <Form>
@@ -528,11 +529,6 @@ const Invoice = (props) => {
 
   return (
     <Main>
-      <h4 style={{ color: "#000", position: "fixed", right: 8, top: 2 }}>
-        Wallet Address:{props.account}
-      </h4>
-      <br />
-      <h2>Invoice</h2>
       <ReactForm
         amountDue={amountDue}
         setAmountDue={setAmountDue}

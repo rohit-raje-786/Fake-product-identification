@@ -1,3 +1,5 @@
+/*
+initiall css for home page
 .container {
   min-height: 100vh;
   width: 100vw;
@@ -60,4 +62,87 @@ h2 {
   letter-spacing: 0.2em;
   border-radius: 10em;
   color: white;
+}
+
+*/
+
+#login-type-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-type {
+  width: 80%;
+  min-width:800px;
+  max-width: 1200px;
+  /* min-width: 600px; */
+  color: var(--lightPrimaryColor);
+  font-family: "Courgette", cursive;
+  text-align: center;
+
+}
+
+#greetings {
+  font-size: 6.5rem;
+  margin-bottom: 0.5rem;
+}
+#subtitle-txt {
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+
+#options-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 800px) {
+  #login-type-container {
+    height: auto;
+    width: 100%;
+  }
+  #login-type {
+    width: 100%;
+    padding: 30px;
+    min-width: 0px;
+  }
+  #options-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .options {
+    margin: 10px 5px;
+  }
+}
+
+.options-image {
+  width: 240px;
+  height: 240px;
+  display: block;
+  margin: 0px auto;
+}
+
+.options-image-caption {
+  margin-top: 24px;
+  color: var(--primaryColor);
+  font-family: "Inter", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.select-link{
+  text-decoration: none;
+}
+
+@media (min-width:800px) and (max-width: 1000px) {
+  .options-image {
+    width: 160px;
+    height: 160px;
+    display: block;
+    margin: 0px auto;
+  }
 }
