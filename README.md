@@ -5,6 +5,11 @@ An app which will help to detect whether the product is authenticated or not usi
 * ### Manufacturer
 * ### Distributor
 
+*Manufacturer* has the right to create the asset and based upon the unique hash returned after the transaction unique Qrcode is genereted which contains
+asset details and the unique hash of the asset.
+
+*Distributor* just need to register himself on the platform,no further functionalities is provided to the distributor,after the manufacturer create the asset he/she assign the registered distributor along with it,then selected distributor recieves the mail regarding the same to deliver the order.
+
 # Work
 The unique Qrcode is generated after creating the asset based on unique hash returned after the transaction
 
