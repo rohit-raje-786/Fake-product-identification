@@ -1,3 +1,13 @@
+# About Fake Product Identification 🕵️‍♀️
+An app which will help to detect whether the product is authenticated or not using blockchain.
+
+## The App has two panel :
+Markup : * Manufacturer
+         * Distributor
+
+# Work
+The unique Qrcode is generated after creating the asset based on unique hash returned after the transaction
+
 # Backend
 https://github.com/rohit-raje-786/Fake-prodcut-identification-smart-contract
 
