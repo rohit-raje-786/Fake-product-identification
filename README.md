@@ -38,7 +38,7 @@ https://www.loom.com/share/12e29a7cd8264662b218602e7e28c235
 
 
 #### Authentication Page
-![Uploading Screenshot 2022-05-01 at 11.56.16 PM.png…]()
+<img width="1420" alt="Screenshot 2022-05-01 at 11 56 16 PM" src="https://user-images.githubusercontent.com/61861303/166159400-272a5cbe-4d7d-4a3e-93df-1997846d47a1.png">
 
 
 ### Backend Code
