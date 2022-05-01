@@ -16,8 +16,7 @@ Simply by proceeding to the authentication page where the *Distributor* or *Cons
 # But why Blockchain?
 After going through multiple methodologies and techniques used in the market to ensure authenticity of a product . We came up with a decentralized solution to authenticate the products whether they are real or fake.One of the reasons behind opting for a decentralized system is that it is immutable, so there are no chances of tampering the data and they are public, so there is nothing like secrecy. As it will provide complete transparency to the users, manufactures,vendors and others.
 
-
-# Backend
+### Backend Code
 https://github.com/rohit-raje-786/Fake-prodcut-identification-smart-contract
 
 # Getting Started with Create React App
@@ -90,4 +89,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Asset-Tracker-Frontend
+
