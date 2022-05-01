@@ -19,6 +19,28 @@ After going through multiple methodologies and techniques used in the market to 
 ### Demo Video
 https://www.loom.com/share/12e29a7cd8264662b218602e7e28c235
 
+### Screenshots
+
+#### Home Page
+<img width="1436" alt="Screenshot 2022-05-01 at 11 55 04 PM" src="https://user-images.githubusercontent.com/61861303/166159257-b24f507f-90e2-4959-af46-a93dec613f96.png">
+
+#### Manufacturer/TrackProduct
+<img width="1390" alt="Screenshot 2022-05-01 at 11 55 23 PM" src="https://user-images.githubusercontent.com/61861303/166159282-2f4d5cc0-b16d-4008-8cb3-6912b19ed826.png">
+
+#### Manufacturer/AddProduct
+<img width="1381" alt="Screenshot 2022-05-01 at 11 55 35 PM" src="https://user-images.githubusercontent.com/61861303/166159301-c63941c9-de43-49b4-9bdb-be080796b6a6.png">
+
+#### Manufacturer/Available Distributors
+<img width="1397" alt="Screenshot 2022-05-01 at 11 55 49 PM" src="https://user-images.githubusercontent.com/61861303/166159316-6356b977-1224-41e7-a745-25874a3e7430.png">
+
+#### Distributor Registeration
+<img width="1418" alt="Screenshot 2022-05-01 at 11 56 02 PM" src="https://user-images.githubusercontent.com/61861303/166159329-5a373228-7adc-4fb0-ab24-f42eac29869d.png">
+
+
+#### Authentication Page
+![Uploading Screenshot 2022-05-01 at 11.56.16 PM.png…]()
+
+
 ### Backend Code
 https://github.com/rohit-raje-786/Fake-prodcut-identification-smart-contract
 
