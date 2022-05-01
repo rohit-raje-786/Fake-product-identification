@@ -2,8 +2,8 @@
 An app which will help to detect whether the product is authenticated or not using blockchain.
 
 ## The App has two panel :
-*Manufacturer
-*Distributor
+* Manufacturer
+* Distributor
 
 # Work
 The unique Qrcode is generated after creating the asset based on unique hash returned after the transaction
